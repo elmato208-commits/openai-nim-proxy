@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAI to NVIDIA NIM Proxy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 0.95em;
+        }
+        .status {
+            background: #f0f4f8;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0;
+            font-size: 0.9em;
+        }
+        .endpoint {
+            background: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        .endpoint-method {
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .section-title {
+            color: #333;
+            font-size: 1.2em;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .info-text {
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .config-note {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            color: #856404;
+            padding: 12px;
+            border-radius: 4px;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #999;
+            font-size: 0.85em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 OpenAI to NVIDIA NIM Proxy</h1>
+        <p class="subtitle">OpenAI compatible proxy for NVIDIA NIM API</p>
+        
+        <div class="status">
+            <div class="status-item">
+                <span>Status:</span>
+                <span style="color: #22c55e; font-weight: bold;">✓ Running</span>
+            </div>
+            <div class="status-item">
+                <span>Service:</span>
+                <span>OpenAI Proxy</span>
+            </div>
+        </div>
+
+        <div class="section-title">Available Endpoints</div>
+        <div class="endpoint">
+            <span class="endpoint-method">GET</span>/health
+        </div>
+        <p class="info-text">Check the health status of the proxy and view configuration.</p>
+
+        <div class="endpoint">
+            <span class="endpoint-method">GET</span>/v1/models
+        </div>
+        <p class="info-text">List all available OpenAI-compatible models.</p>
+
+        <div class="endpoint">
+            <span class="endpoint-method">POST</span>/v1/chat/completions
+        </div>
+        <p class="info-text">Send chat completion requests (OpenAI compatible format).</p>
+
+        <div class="section-title">Configuration</div>
+        <p class="info-text">Required environment variables:</p>
+        <div class="endpoint">NIM_API_KEY</div>
+        <p class="info-text">Your NVIDIA NIM API key</p>
+
+        <p class="info-text" style="margin-top: 15px;">Optional environment variables:</p>
+        <div class="endpoint">NIM_API_BASE</div>
+        <p class="info-text">NVIDIA NIM API base URL (default: https://integrate.api.nvidia.com/v1)</p>
+
+        <div class="endpoint">SHOW_REASONING</div>
+        <p class="info-text">Set to 'true' to display model reasoning with &lt;think&gt; tags</p>
+
+        <div class="endpoint">ENABLE_THINKING_MODE</div>
+        <p class="info-text">Set to 'true' to enable thinking mode for supported models</p>
+
+        <div class="config-note">
+            ⚠️ <strong>Important:</strong> Make sure NIM_API_KEY is set in your environment before using the proxy.
+        </div>
+
+        <div class="footer">
+            <p>Powered by Express.js & NVIDIA NIM</p>
+        </div>
+    </div>
+</body>
+</html>
